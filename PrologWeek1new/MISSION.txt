@@ -1,0 +1,122 @@
+***MISSION.txt***
+
+PURPOSE
+
+In this 1-week assignment, you will be learning some of the basics and fundamentals
+of the language Prolog. Prolog is a unique language based on logic that many of
+you have never seen before. It is a language that uses facts and rules, which
+is unlike any language that has been covered thus far in CSC 173, or in
+CSC 172 and CSC 171. Thus, the purpose of this assignment is to get used to
+this type of programming, along with the different thought process that comes with
+this new type of language.
+
+BACKGROUND AND MISSION
+
+In this project, you will be asked to construct a family tree based on a song.
+Creating a family tree in Prolog truly shows how powerful the language can be.
+A huge component of Prolog is that for every rule you can answer several questions,
+where as other languages you can only answer one question. For example, if
+I asked Prolog "sister(mary,X)." Prolog will return every sister that Mary has and
+"sister(mary,julia)." will check to see if Mary and Julia are sisters. As you
+can see, those are the same rules but it can have multiple functions.
+
+The family tree you will create is from the song, "I'm my own Grandpa", whose
+lyrics can be found in this folder titled "lyrics.txt". To hear the song in all
+its glory, a YouTube video can be found here: https://www.youtube.com/watch?v=0VxLQZPqI2M
+
+You will need to compute the following relationships in Prolog:
+male(X), female(X), mother(X,Y), father(X,Y), wife(X,Y), husband(X,Y), brother(X,Y),
+uncle(X,Y), aunt(X,Y), daughter(X,Y), son(X, Y), grandchild(X, Y),
+grandmother(X,Y), and grandfather(X,Y).
+
+In order to keep the readings of the relationships consistent read the rules as
+follows: X is the ____ of Y, where ___ is the relationship. For example,
+"brother(john, mary)." reads as John is the brother of Mary. In order to keep
+the facts consistent as well, here are the names of all the subjects
+in the song that I would like for all of you to use: i, widow, redhair, dad,
+baby, and onrun.
+
+Finally, what is extremely important about this assignment is that you want to
+minimize your facts by as much as you can! If you have too many facts which
+could have been eliminated by rules, points will be deducted. Another thing
+to note, is if you are going to experiment with cuts (!), be careful that when
+running commands that have multiple answers not to cut them short. But at the same
+time don't have redundant rules that produce the same answer multiple times.
+
+HOW TO GET STARTED:
+
+Download swipl (or use the CSUG cycles) and start looking at tutorials on how
+Prolog works. Joyce has posted tutorials a while ago so I would advise all
+of you to start there in order to get a feel on how how Prolog works as a
+language. Then go through the song and make a family tree yourself and think
+of ways to minimize the number of facts you need. From there you can code and
+test your code until you are done!
+
+As a trivial starter example, put the following line of Prolog into a file called test.pl:
+
+mother(mary, john).
+
+(You need to include that period.)
+
+Now type "swipl" at the command line. In this transcript of my interaction with the swipl
+interpreter, I demonstrate how to load a Prolog file, ask it questions, and exit.
+
+?- [test].
+% test compiled 0.00 sec, 2 clauses
+true.
+
+?- mother(mary,john).
+true.
+
+?- mother(mary, X).
+X = john.
+
+?- mother(foo, john).
+false.
+
+?- halt.
+
+DESCRIPTION OF FILES:
+
+MISSION.txt - this file! Gives directions on what this week's project.
+lyrics.txt - the lyrics for the song, which are needed to construct the family
+              tree.
+
+GRADING SCHEME:
+
+Your grade for this assignment will be based on 85% on the functionality of the
+program itself, 5% on how well you commented your code, and
+10% on your README file. As always there are opportunities for extra credit, for
+going above and beyond and clearly documenting what you did in your README. The
+percentage of extra credit will be determined on what you did but it will never
+exceed 10% of the final grade, and you are not guaranteed extra credit just 
+because you documented something for extra credit. Points for commenting your
+code, README, and extra credit are at the sole discretion of the grader. NOTE:
+We will grade your code using the installation of swipl on the CSUG servers, 
+so make sure your code runs on that!
+
+HOW TO SUBMIT:
+
+To submit, make a ZIP file containing your source code (.pl file) along with
+your README.txt:
+
+Then go to Blackboard to the CSC 173 Class homepage, navigate to Course
+Materials, and click on "Prolog Week 1". Upload your ZIP file at the link
+before 11:00PM on Wednesday, October 14. Note that we will NOT be accepting any
+late submissions, so please make sure to submit something to Blackboard before
+this! Even if your program is incomplete, it is better to submit
+something before the due time than nothing, as you risk getting a 0 for this
+assignment.
+
+HELP/CONTACT:
+
+The primary grader and contact for this assignment is Kevin Gerami who can
+be reached at kevingerami@rochester.edu. However, due to our new Piazza discussion
+board that we have I recommend to ask your questions on there and I will answer
+them there so if other students have the same question then they can see the response.
+However, if you have a more personal question you are more than welcome to email
+me directly.
+
+And as always, if you are having a tough time with the code itself I strongly
+encourage you to go to CSUG tutoring in Hylan 301 with tutors there Monday-Friday.
+There schedule can be found here: http://csug.rochester.edu/ugc/tutoring/.
