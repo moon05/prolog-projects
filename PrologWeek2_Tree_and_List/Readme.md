@@ -11,12 +11,14 @@ Files available:
 Rules available:
 ---------------------------
 For Tree:
+----------------
 count_nodes  
 tree_leaf  
 increment_tree  
 subtree  
 
 For List:
+----------------
 list_length  
 list_element  
 increment_tree  
