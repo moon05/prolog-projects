@@ -1,0 +1,118 @@
+1. count_nodes(+Tree, -Count)
+count_nodes(leaf(1), X).
+X = 0.
+
+count_nodes(node(leaf(1),leaf(2)), X).
+X = 1.
+
+count_nodes(node(leaf(3),node(node(leaf(1),node(leaf(3),leaf(8))),leaf(6))),X).
+X = 4.
+
+2. tree_leaf(+Tree, -Value)
+tree_leaf(node(leaf(1),leaf(2)), 2).
+true ;
+false.
+
+tree_leaf(node(leaf(3),node(node(leaf(1),node(leaf(3),leaf(8))),leaf(6))),1).
+true ;
+false.
+
+tree_leaf(node(leaf(1),leaf(2)), 20).
+false.
+
+3. increment_tree(+TreeOriginal. ?TreeNew)
+increment_tree(node(leaf(1),leaf(2)), X).
+X = node(leaf(2), leaf(3)).
+
+increment_tree(node(leaf(3),node(node(leaf(1),node(leaf(3),leaf(8))),leaf(6))), X).
+X = node(leaf(4), node(node(leaf(2), node(leaf(4), leaf(9))), leaf(7))).
+
+increment_tree(node(leaf(1),leaf(2)), node(leaf(2), leaf(3))).
+true.
+
+increment_tree(node(leaf(1),leaf(2)), node(leaf(2), leaf(30))).
+false.
+
+4. subtree(+Tree, -Subtree)
+subtree(node(leaf(1),leaf(2)), X).
+X = leaf(1) ;
+X = leaf(2) ;
+X = node(leaf(1), leaf(2)).
+
+subtree(node(leaf(3),node(node(leaf(1),node(leaf(3),leaf(8))),leaf(6))), X).
+X = leaf(3) ;
+X = leaf(1) ;
+X = leaf(3) ;
+X = leaf(8) ;
+X = node(leaf(3), leaf(8)) ;
+X = node(leaf(1), node(leaf(3), leaf(8))) ;
+X = leaf(6) ;
+X = node(node(leaf(1), node(leaf(3), leaf(8))), leaf(6)) ;
+X = node(leaf(3), node(node(leaf(1), node(leaf(3), leaf(8))), leaf(6))).
+
+subtree(leaf(1), X).
+X = leaf(1).
+
+5. list_length(+List, -Len)
+list_length([], X).
+X = 0.
+
+list_length([1,5,2,1,2], X).
+X = 5.
+
+list_length([[1,2], [3,1,2]], X).
+X = 2.
+
+6. list_element(+List, +Value)
+list_element([a,1,f,b], 1).
+true ;
+false.
+
+list_element([a,1,f,b], x).
+false.
+
+list_element([[1,2], [3,1,2]], [3,1,2]).
+true ;
+false.
+
+7. increment_list(+LOriginal, ?LNew)
+increment_list([1,2,3,4,5], X).
+X = [2, 3, 4, 5, 6].
+
+increment_list([1,2,3,4,5], [2,3,4,5,6]).
+true.
+
+increment_list([1,2,3,4,5], [2,3,4,3,6]).
+false.
+
+8. list_last(+List, ?Value)
+list_last([1,5,2,7], X).
+X = 7 ;
+false.
+
+list_last([1,2,2,3], 3).
+true ;
+false.
+
+list_last([[1,2], [3,1,2]], X).
+X = [3, 1, 2] ;
+false.
+
+9. list_suffix(+L, -Suffix)
+list_suffix([1,2,3,4,5], X).
+X = [1, 2, 3, 4, 5] ;
+X = [2, 3, 4, 5] ;
+X = [3, 4, 5] ;
+X = [4, 5] ;
+X = [5] ;
+X = [].
+
+10. list_concat(+L1, +L2, -LConacat)
+list_concat([1,2,3], [4,5,6], X).
+X = [1, 2, 3, 4, 5, 6].
+
+list_concat([1,2,3], [], X).
+X = [1, 2, 3].
+
+list_concat([], [4,5,6], X).
+X = [4, 5, 6].
