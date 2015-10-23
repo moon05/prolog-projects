@@ -24,5 +24,6 @@ list_last
 list_suffix  
 list_concat  
 is_element  
+list_reverse  
 del_duplicate (not working properly yet)
 
