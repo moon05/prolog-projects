@@ -10,15 +10,13 @@ Files available:
 
 Rules available:
 ---------------------------
-For Tree:
-----------------
+####For Tree:  
 count_nodes  
 tree_leaf  
 increment_tree  
 subtree  
 
-For List:
-----------------
+####For List:  
 list_length  
 list_element  
 increment_tree  
